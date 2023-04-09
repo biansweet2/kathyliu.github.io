@@ -37,5 +37,15 @@
         <div class="container mt-5">
             <button type="button" class="btn btn-primary" onclick="howdy('kathy')">Run Sample JS</button>
         </div>
+
+        <div id="minute"></div>
+        <button onclick="displayMinute()">Get Minute</button>
+        <script>
+            function displayMinute() {
+                const now = new Date();
+                const minute = now.getMinutes();
+                document.getElementById("minute").innerText = `The current minute is ${minute}.`;
+            }
+    </script>
     </body>
 </html>
