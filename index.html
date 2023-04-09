@@ -25,7 +25,15 @@
                 <a href="linkedin.html" class="nav-link">LinkedIn</a>
             </li>
         </ul>
-
+        <div id="minute"></div>
+        <button onclick="displayMinute()">Get Minute</button>
+        <script>
+            function displayMinute() {
+                const now = new Date();
+                const minute = now.getMinutes();
+                document.getElementById("minute").innerText = `The current minute is ${minute}.`;
+            }
+        </script>
         <div class="container-fluid">
             <h1 class="display-1">Hello, World!</h1>
             <h3 class="d-none d-md-block">Kathy Liu's Github Site</h3>
@@ -38,14 +46,5 @@
             <button type="button" class="btn btn-primary" onclick="howdy('kathy')">Run Sample JS</button>
         </div>
 
-        <div id="minute"></div>
-        <button onclick="displayMinute()">Get Minute</button>
-        <script>
-            function displayMinute() {
-                const now = new Date();
-                const minute = now.getMinutes();
-                document.getElementById("minute").innerText = `The current minute is ${minute}.`;
-            }
-    </script>
     </body>
 </html>
