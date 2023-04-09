@@ -46,7 +46,16 @@
         <div>
             <p class="display-5">Welcome to DIGS Data Publication</p>
         </div>
-        
+
+        <p id="my-element">This is the element to hide</p>
+        <button onclick="hideElement()">Hide Element</button>
+        <script>
+            function hideElement() {
+                const element = document.getElementById("my-element");
+                element.style.display = "none";
+            }
+        </script>
+
         <div class="container mt-5">
             <button type="button" class="btn btn-primary" onclick="howdy('kathy')">Run Sample JS</button>
         </div>
