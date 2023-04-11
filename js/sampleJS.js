@@ -3,7 +3,7 @@ function howdy(firstName){
 }
 
 function evalNumber() {
-    var inputValue = prompt("Enter any five-digit numbers without commas")
+    var inputValue = prompt("Enter any five-digit numbers without commas");
     let input = document.getElementById("numInput").value;
     let num = parseInt(input);
   
