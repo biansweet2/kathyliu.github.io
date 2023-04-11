@@ -4,8 +4,8 @@ function howdy(firstName){
 
 function evalNumber() {
     var inputValue = prompt("Enter any five-digit numbers without commas");
-    let input = document.getElementById("numInput").value;
-    let num = parseInt(input);
+    let inputValue = document.getElementById("numInput").value;
+    let num = parseInt(inputValue);
   
     if (Number.isInteger(num) && num >= 10000 && num <= 99999) {
         document.getElementById("result").innerHTML = "Valid 5-digit integer";
