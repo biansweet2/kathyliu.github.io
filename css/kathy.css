@@ -5,3 +5,17 @@ h1 {color:maroon}
 #nav {color:lightpink}
 
 h3 {color:blueviolet}
+
+img {
+    display: block;
+    margin: auto;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button {
+    display: block;
+}
