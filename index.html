@@ -54,7 +54,7 @@
                             </p>
     
                         </div>
-                        <a href="https://kameli.com" class="btn cardBtn" style="background-color: rgb(35, 200, 80); color:white">Kameli Law, P.C.</a >
+                        <a href="https://kameli.com" class="btn cardBtn" style="background-color: rgb(255, 182, 193); color:white">Kameli Law, P.C.</a >
                     </div>
                 </div>
                 <div class="col-md mt-4">
@@ -64,7 +64,7 @@
                             <p class="card-text dropcap">Managed daily operations and promotions of public brand accounts on social platforms. Carried out series design for products and promotional activities to analyze different groups targeted by series sales. Drove 10% increase in month-over-month sales with redesigned marketing materials.</p>
             
                         </div>
-                        <a href="https://www.kissyvape.com" class="btn cardBtn" style="background-color: rgb(35, 200, 80); color:white">Kissyvape</a>
+                        <a href="https://www.kissyvape.com" class="btn cardBtn" style="background-color: rgb(255, 182, 193); color:white">Kissyvape</a>
                     </div>
                 </div>
                 <div class="col-md mt-4">
@@ -74,7 +74,7 @@
                             <p class="card-text dropcap">Created and managed video database of public access awards, film festivals, and royalty-free video websites. Developed a 2-minute video that provided suggestions of Del Mar tourist attractions and restaurants under COVID-19. Composed academic analysis on how community media could effectively benefit its local citizens and how it would develop in the long run in the “shadow” of mainstream media
                             </p>
                         </div>
-                        <a href="https://www.facebook.com/delmartv/" class="btn cardBtn" style="background-color: rgb(35, 200, 80); color:white">Del Mar TV</a>
+                        <a href="https://www.facebook.com/delmartv/" class="btn cardBtn" style="background-color: rgb(255, 182, 193); color:white">Del Mar TV</a>
                     </div>
                 </div>
             </div>
@@ -123,7 +123,21 @@
         
         <br>
 
+        <button onclick="showArrayLength()">Get Array Length</button>
+        <p id="length"></p>
+        <script>
+            function showArrayLength() {
+                const sampleArray = [1, 2, 3, 4, 5];
+                const length = getArrayLength(sampleArray);
+                document.getElementById("length").innerHTML = length;
+            }
+
+            function getArrayLength(arr) {
+                return arr.length;
+            }
+        </script>
         
+        <br>
 
         <!-- Footer and hiding in small screen -->
         <footer class="bg-light text-center text-lg-start d-none d-md-block">
