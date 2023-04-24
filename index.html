@@ -158,6 +158,39 @@
         
         <br>
 
+        <h1>Wikipedia API Example</h1>
+        <input type="text" id="search-input">
+        <button onclick="search()">Search</button>
+        <div id="search-results"></div>
+      
+        <script>
+            function search() {
+                const searchTerm = document.getElementById("search-input").value;
+                const url = `https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&srsearch=${searchTerm}`;
+                const xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        const response = JSON.parse(xhr.responseText);
+                        const results = response.query.search;
+                        const searchResults = document.getElementById("search-results");
+                        searchResults.innerHTML = "";
+                        for (let i = 0; i < results.length; i++) {
+                            const title = results[i].title;
+                            const snippet = results[i].snippet;
+                            const link = `https://en.wikipedia.org/wiki/${title.replace(" ", "_")}`;
+                            const resultElement = document.createElement("div");
+                            resultElement.innerHTML = `<h2><a href="${link}">${title}</a></h2><p>${snippet}</p>`;
+                            searchResults.appendChild(resultElement);
+                        }
+                    }
+                };
+                xhr.open("GET", url);
+                xhr.send();
+            }
+        </script>
+
+        <br>
+
         <!-- Footer and hiding in small screen -->
         <footer class="bg-light text-center text-lg-start d-none d-md-block">
             Created by Kathy Liu, April 2023
