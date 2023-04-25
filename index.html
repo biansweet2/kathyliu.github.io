@@ -202,9 +202,9 @@
             }
         </script>
 
-
         <br>
 
+        <!-- Map API -->
         <h1>Map API Example</h1>
         <div id="map"></div>
 
@@ -229,8 +229,9 @@
 
         <br>
 
+        <!-- OCHRE API -->
         <h1>OCHRE API Example</h1>
-        <table id="my-table">
+        <table id="ochre-table">
             <thead>
                 <tr>
                     <th>Column 1</th>
@@ -238,29 +239,38 @@
                 </tr>
             </thead>
             <tbody>
+                <tr>
+                    <td>Row 1, Column 1</td>
+                    <td>Row 1, Column 2</td>
+                </tr>
+                <tr>
+                    <td>Row 2, Column 1</td>
+                    <td>Row 2, Column 2</td>
+                </tr>
+                <tr>
+                    <td>Row 3, Column 1</td>
+                    <td>Row 3, Column 2</td>
+                </tr>
             </tbody>
         </table>
-
         <script>
-            const url = "https://ochre.lib.uchicago.edu/ochre?uuid=0ad43a89-09d6-4292-88cb-b6fd6dfe41e5";
-            const xhr = new XMLHttpRequest();
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    const response = JSON.parse(xhr.responseText);
-                    const myTable = document.getElementById("my-table").getElementsByTagName('tbody')[0];
-                    for (let i = 0; i < response.length; i++) {
-                        const column1Value = response[i].column1;
-                        const column2Value = response[i].column2;
-                        const row = myTable.insertRow(i);
-                        const cell1 = row.insertCell(0);
-                        const cell2 = row.insertCell(1);
-                        cell1.innerHTML = column1Value;
-                        cell2.innerHTML = column2Value;
-                    }
-                }
-            };
-            xhr.open("GET", url);
-            xhr.send();
+            // Call the OCHRE API to get data and populate the table
+            // Replace the sample data with actual OCHRE API data
+            const ochreData = [
+                ["Row 4, Column 1", "Row 4, Column 2"],
+                ["Row 5, Column 1", "Row 5, Column 2"],
+                ["Row 6, Column 1", "Row 6, Column 2"]
+            ];
+            const tableBody = document.querySelector('#ochre-table tbody');
+            ochreData.forEach(row => {
+                const tableRow = document.createElement('tr');
+                row.forEach(cellData => {
+                    const tableCell = document.createElement('td');
+                    tableCell.innerText = cellData;
+                    tableRow.appendChild(tableCell);
+                });
+                tableBody.appendChild(tableRow);
+            });
         </script>
 
         <br>
