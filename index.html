@@ -9,6 +9,10 @@
         <link rel="stylesheet" href="css/kathy.css">
         <title>Kahty Liu's Personal Website</title>
         <script src="js/sampleJS.js"></script>
+
+        <!-- JS Links -->
+        <script src="https://code/jquery.com/jquery-3.5.0.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     </head>
 
     <body>
@@ -157,36 +161,106 @@
         </script>
         
         <br>
+        
+        <!-- Wikipedia API -->
+        <div id="nav-placeholder"></div>
+        <div class="container mt-5">
+            <div id="title">Wikipedia API Example</div>
+            <form>
+                <div class="row">
+                    <div class="col">
+                        <input id="searchTerm" type="text" class="form-control" placeholder="Enter you search term here...">
+                    </div>
+                </div>
+            </form>
 
-        <h1>Wikipedia API Example</h1>
-        <input type="text" id="search-input">
-        <button onclick="search()">Search</button>
-        <div id="search-results"></div>
+            <button type="submit" class="btn btn-primary my-3" onclick="wikiAPI()">Search</button>
+
+            <div class="container" id="wiki"></div>
+        </div>
       
         <script>
-            function search() {
-                const searchTerm = document.getElementById("search-input").value;
-                const url = `https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&srsearch=${searchTerm}`;
-                const xhr = new XMLHttpRequest();
-                xhr.onreadystatechange = function() {
-                    if (xhr.readyState === 4 && xhr.status === 200) {
-                        const response = JSON.parse(xhr.responseText);
-                        const results = response.query.search;
-                        const searchResults = document.getElementById("search-results");
-                        searchResults.innerHTML = "";
-                        for (let i = 0; i < results.length; i++) {
-                            const title = results[i].title;
-                            const snippet = results[i].snippet;
-                            const link = `https://en.wikipedia.org/wiki/${title.replace(" ", "_")}`;
-                            const resultElement = document.createElement("div");
-                            resultElement.innerHTML = `<h2><a href="${link}">${title}</a></h2><p>${snippet}</p>`;
-                            searchResults.appendChild(resultElement);
-                        }
-                    }
-                };
-                xhr.open("GET", url);
-                xhr.send();
+            function wikiAPI() {
+                var searchTerm = document.getElementById("searchTerm").value;
+                var connect = new XMLHttpRequest();
+                var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=20&gsrsearch=" + searchTerm;
+
+                connect.open("GET", url);
+
+                connect.onload = function() {
+                    var wikiObject = JSON.parse(this.response);
+                    var pages = wikiObject.query.pages;
+                    for (var i in pages) {
+                        var newDiv = document.createElement("div");
+                        newDiv.setAttribute("class", "row h4");
+                        document.getElementById("wiki").appendChild(newDiv);
+                        newDiv.innerText = pages[i].title;
+                    };
+                }
+
+                connect.send();
             }
+        </script>
+
+
+        <br>
+
+        <h1>Map API Example</h1>
+        <div id="map"></div>
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQ_Sj9KeFAWpyMy_f2eGghM0iT02XnEEg"></script>
+        <script>
+            function initMap() {
+                const myLatLng = { lat: 40.7128, lng: -74.0060 };
+                const map = new google.maps.Map(document.getElementById("map"), {
+                    zoom: 12,
+                    center: myLatLng,
+                });
+                const marker = new google.maps.Marker({
+                    position: myLatLng,
+                    map: map,
+                    title: "New York City",
+                });
+            }
+        </script>
+        <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQ_Sj9KeFAWpyMy_f2eGghM0iT02XnEEg&callback=initMap">
+        </script>
+
+        <br>
+
+        <h1>OCHRE API Example</h1>
+        <table id="my-table">
+            <thead>
+                <tr>
+                    <th>Column 1</th>
+                    <th>Column 2</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+        <script>
+            const url = "https://ochre.lib.uchicago.edu/ochre?uuid=0ad43a89-09d6-4292-88cb-b6fd6dfe41e5";
+            const xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    const response = JSON.parse(xhr.responseText);
+                    const myTable = document.getElementById("my-table").getElementsByTagName('tbody')[0];
+                    for (let i = 0; i < response.length; i++) {
+                        const column1Value = response[i].column1;
+                        const column2Value = response[i].column2;
+                        const row = myTable.insertRow(i);
+                        const cell1 = row.insertCell(0);
+                        const cell2 = row.insertCell(1);
+                        cell1.innerHTML = column1Value;
+                        cell2.innerHTML = column2Value;
+                    }
+                }
+            };
+            xhr.open("GET", url);
+            xhr.send();
         </script>
 
         <br>
