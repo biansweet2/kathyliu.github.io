@@ -1,7 +1,5 @@
 h1 {color:maroon}
 
-#second {color:blueviolet}
-
 #nav {color:lightpink}
 
 h3 {color:blueviolet}
@@ -11,11 +9,7 @@ img {
     margin: auto;
 }
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 button {
     display: block;
 }
