@@ -50,7 +50,54 @@
         </div>
 
         <br>
-     
+        <br>
+
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h3 class="accordion-header" id="heading1">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1" onclick="toggleAccordion('collapse1')">The University of Chicago</button>
+                </h3>
+                <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Master of Arts in Digital Studies of Language, Culture, and History
+                        <br>
+                        September 2022 - June 2023
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading2">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2" onclick="toggleAccordion('collapse2')">University of California, San Diego</button>
+                </h2>
+                <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Bachelor of Arts, Major in Communication, Minor in Film Studies
+                        <br>
+                        September 2017 - December 2020
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.7.2/dist/js/bootstrap.bundle.min.js"></script>
+
+        <script>
+            function toggleAccordion(collapseId) {
+                const collapseElement = document.getElementById(collapseId);
+                const isExpanded = collapseElement.classList.contains('show');
+                
+                if (isExpanded) {
+                    collapseElement.classList.remove('show');
+                } else {
+                    const accordion = new bootstrap.Collapse(collapseElement, { toggle: false });
+                    accordion.show();
+                }
+            }
+        </script>
+          
+        <br>
+        <br>
+
         <div class="container">
             <div class="row">
                 <div class="col-md mt-4">
