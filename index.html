@@ -249,9 +249,14 @@
                             var newDiv = document.createElement("div");
                             newDiv.setAttribute("class", "row h4");
                             document.getElementById("wiki").appendChild(newDiv);
-                            newDiv.innerText = pages[i].title;
-                        };
-                    }
+                            
+
+                            var link = document.createElement("a");
+                            link.href = "https://en.wikipedia.org/?curid=" + pages[i].pageid;
+                            link.innerText = pages[i].title;
+                            newDiv.appendChild(link);
+                            }
+                    };
 
                     connect.send();
                 }
