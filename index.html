@@ -33,12 +33,12 @@
             <li class="nav-item">
                 <a href="linkedin.html" class="nav-link">LinkedIn</a>
             </li>
-            <form action="#" method="get">
-                <input type="text" name="search" placeholder="Search...">
-                <button type="submit">Go</button>
-            </form>          
+            <form action="#" method="get" class="search-form">
+                <input type="text" name="search" placeholder="Search..." class="search-input">
+                <button type="submit" class="search-button">Go</button>
+            </form>                   
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
             </button>      
         </nav>
 
@@ -59,7 +59,6 @@
                             <h5 class="card-title">Marketing Communication Intern in Kameli Law, P.C.</h5>
                             <p class="card-text dropcap">Conducted research on Chinese market, investigated investor channels subjected to EB-5, EB-5 fraud, and Chinese family immigration, and analyzed potential active websites and social accounts of these groups. Registered firm accounts on major social platforms in China (WeChat, Zhihu), conducted content operations, expanded brand awareness, and attracted potential users of those social platforms to follow WeChat official account. Published news and articles about EB-5 fraud, cooperated with influential accounts, advertising to increase followers.
                             </p>
-    
                         </div>
                         <a href="https://kameli.com" class="btn cardBtn" style="background-color: rgb(255, 182, 193); color:white">Kameli Law, P.C.</a >
                     </div>
@@ -88,50 +87,60 @@
         </div>
         
         <br>
-
-        <div id="minute"></div>
-        <button onclick="displayMinute()">Get Minute</button>
-        <script>
-            function displayMinute() {
-                const now = new Date();
-                const minute = now.getMinutes();
-                document.getElementById("minute").innerText = `The current minute is ${minute}.`;
-            }
-        </script>
-
         <br>
 
-        <p id="my-element">Welcome to DIGS Data Publication</p>
-        <button onclick="hideElement()">Hide Element</button>
-        <script>
-            function hideElement() {
-                const element = document.getElementById("my-element");
-                element.style.display = "none";
-            }
-        </script>
-
-        <br>
-
-        <h3>Expandable HTML Example</h3>
-        <button onclick="toggleExpand()">Show Details</button>
-        <div id="expandable">
-		<p>Some additional details here.</p>
+        <div class="center">
+            <h3>Get Minute</h3>
+            <div id="minute"></div>
+            <button onclick="displayMinute()">Get Minute</button>
+            <script>
+                function displayMinute() {
+                    const now = new Date();
+                    const minute = now.getMinutes();
+                    document.getElementById("minute").innerText = `The current minute is ${minute}.`;
+                }
+            </script>
         </div>
 
         <br>
 
-        <div class="container mt-5">
-            <button type="button" class="btn btn-primary" onclick="howdy('kathy')">Run Sample JS</button>
-            <p></p>
-            <input type="text" id="numInput">
-            <button type="button" class="btn btn-primary" onclick="evalNumber()">Evaluate Number</button>
-            <p id="result"></p>
+        <div class="center">
+            <h3>Hide Element</h3>
+            <p id="my-element">Welcome to DIGS Data Publication</p>
+            <button onclick="hideElement()">Hide Element</button>
+            <script>
+                function hideElement() {
+                    const element = document.getElementById("my-element");
+                    element.style.display = "none";
+                }
+            </script>
+        </div>
+
+        <br>
+
+        <div class="center">
+            <h3>Expandable HTML Example</h3>
+            <button onclick="toggleExpand()">Show Details</button>
+            <div id="expandable">
+            <p>Some additional details here.</p>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="center">
+            <div class="container mt-5">
+                <button type="button" class="btn btn-primary" onclick="howdy('kathy')">Run Sample JS</button>
+                <input type="text" id="numInput">
+                <button type="button" class="btn btn-primary" onclick="evalNumber()">Evaluate Number</button>
+                <p id="result"></p>
+            </div>
         </div>
         
         <br>
 
         <div class="container">
-            <h1 class="text-center mt-5">My Bootstrap Images</h1>
+            <h3>My Bootstrap Images</h3>
             <div class="row mt-5">
                 <!-- Image 1 -->
                 <div class="col-md-6">
@@ -148,140 +157,155 @@
         </div>
         
         <br>
-        
-        <div>
-            <button class="btn btn-primary">Home</button>
-            <button class="btn btn-success">Proceed</button>
-            <button class="btn btn-danger">Cancel</button>
-        </div>
         <br>
-        <div>
-            <button class="btn btn-outline-warning">Stop</button>
-            <button class="btn btn-outline-info">Info</button>
+
+        <div class="center">
+            <h3>Various Buttons</h3>
+            <div>
+                <button class="btn btn-primary">Home</button>
+                <button class="btn btn-success">Proceed</button>
+                <button class="btn btn-danger">Cancel</button>
+            </div>
+            <br>
+            <div>
+                <button class="btn btn-outline-warning">Stop</button>
+                <button class="btn btn-outline-info">Info</button>
+            </div>
         </div>
 
         <br>
 
         <!-- Array -->
-        <button onclick="showArrayLength()">Get Array Length</button>
-        <p id="length"></p>
-        <script>
-            function showArrayLength() {
-                const sampleArray = [1, 2, 3, 4, 5];
-                const length = getArrayLength(sampleArray);
-                document.getElementById("length").innerHTML = length;
-            }
+        <div class="center">
+            <h3>Array</h3>
+            <button onclick="showArrayLength()">Get Array Length</button>
+            <p id="length"></p>
+            <script>
+                function showArrayLength() {
+                    const sampleArray = [1, 2, 3, 4, 5];
+                    const length = getArrayLength(sampleArray);
+                    document.getElementById("length").innerHTML = length;
+                }
 
-            function getArrayLength(arr) {
-                return arr.length;
-            }
-        </script>
+                function getArrayLength(arr) {
+                    return arr.length;
+                }
+            </script>
+        </div>
         
         <br>
         
         <!-- Wikipedia API -->
-        <div id="nav-placeholder"></div>
-        <div class="container mt-5">
-            <div id="title">Wikipedia API Example</div>
-            <form>
-                <div class="row">
-                    <div class="col">
-                        <input id="searchTerm" type="text" class="form-control" placeholder="Enter you search term here...">
+        <div class="center">
+            <div id="nav-placeholder"></div>
+            <div class="container mt-5">
+                <h3>Wikipedia API Example</h3>
+                <form>
+                    <div class="row">
+                        <div class="col">
+                            <input id="searchTerm" type="text" class="form-control" placeholder="Enter you search term here...">
+                        </div>
                     </div>
-                </div>
-            </form>
+                </form>
 
-            <button type="submit" class="btn btn-primary my-3" onclick="wikiAPI()">Search</button>
+                <button type="submit" class="btn btn-primary my-3" onclick="wikiAPI()">Search</button>
 
-            <div class="container" id="wiki"></div>
-        </div>
-      
-        <script>
-            function wikiAPI() {
-                var searchTerm = document.getElementById("searchTerm").value;
-                var connect = new XMLHttpRequest();
-                var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=20&gsrsearch=" + searchTerm;
+                <div class="container" id="wiki"></div>
+            </div>
+        
+            <script>
+                function wikiAPI() {
+                    var searchTerm = document.getElementById("searchTerm").value;
+                    var connect = new XMLHttpRequest();
+                    var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=20&gsrsearch=" + searchTerm;
 
-                connect.open("GET", url);
+                    connect.open("GET", url);
 
-                connect.onload = function() {
-                    var wikiObject = JSON.parse(this.response);
-                    var pages = wikiObject.query.pages;
-                    for (var i in pages) {
-                        var newDiv = document.createElement("div");
-                        newDiv.setAttribute("class", "row h4");
-                        document.getElementById("wiki").appendChild(newDiv);
-                        newDiv.innerText = pages[i].title;
-                    };
+                    connect.onload = function() {
+                        var wikiObject = JSON.parse(this.response);
+                        var pages = wikiObject.query.pages;
+                        for (var i in pages) {
+                            var newDiv = document.createElement("div");
+                            newDiv.setAttribute("class", "row h4");
+                            document.getElementById("wiki").appendChild(newDiv);
+                            newDiv.innerText = pages[i].title;
+                        };
+                    }
+
+                    connect.send();
                 }
+            </script>
 
-                connect.send();
-            }
-        </script>
+            <br>
 
-        <br>
+            <!-- Map API -->
+            <div class="center">
+                <h3>Map API Example</h3>
+                <div id="map"></div>
 
-        <!-- Map API -->
-        <h1>Map API Example</h1>
-        <div id="map"></div>
-
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQ_Sj9KeFAWpyMy_f2eGghM0iT02XnEEg"></script>
-        <script>
-            function initMap() {
-                const myLatLng = { lat: 40.7128, lng: -74.0060 };
-                const map = new google.maps.Map(document.getElementById("map"), {
-                    zoom: 12,
-                    center: myLatLng,
-                });
-                const marker = new google.maps.Marker({
-                    position: myLatLng,
-                    map: map,
-                    title: "New York City",
-                });
-            }
-        </script>
-        <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQ_Sj9KeFAWpyMy_f2eGghM0iT02XnEEg&callback=initMap">
-        </script>
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQ_Sj9KeFAWpyMy_f2eGghM0iT02XnEEg"></script>
+                <script>
+                    function initMap() {
+                        const myLatLng = { lat: 40.7128, lng: -74.0060 };
+                        const map = new google.maps.Map(document.getElementById("map"), {
+                            zoom: 12,
+                            center: myLatLng,
+                        });
+                        const marker = new google.maps.Marker({
+                            position: myLatLng,
+                            map: map,
+                            title: "New York City",
+                        });
+                    }
+                </script>
+                <script async defer
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQ_Sj9KeFAWpyMy_f2eGghM0iT02XnEEg&callback=initMap">
+                </script>
+            </div>
+        </div>
 
         <br>
 
         <!-- OCHRE API -->
-        <h1>OCHRE API Example</h1>
-        <body onload="loadXML()">
-            <div id="nav-placeholder"></div>
-            <div class="container mt-3">
-                <div id="title"></div>
-                <div id="subtitle"></div>
-        
-                <div class="container">
-                    <h3 id="projectTitle"></h3>
-                    <h4 id="setTitle"></h4>
-                    <div id="setDescription"></div>
-                    <table class="table table-striped order-table" id="ochreTable">
-                        <thead class="thead-dark" id="ochreTableColumns">
-                            <tr>
-                                <th style="text-align: left; width: 30%">Name</th>
-                                <th style="text-align: left; width: 30%">Description</th>
-                            </tr>
-                        </thead>
-                        <tbody id="ochreTableBody"> 
-                        </tbody>
-                    </table>
+        <div class="center">
+            <h3>OCHRE API Example</h3>
+            <body onload="loadXML()">
+                <div id="nav-placeholder"></div>
+                <div class="container mt-3">
+                    <div id="title"></div>
+                    <div id="subtitle"></div>
+            
+                    <div class="container">
+                        <h4 id="projectTitle"></h4>
+                        <h5 id="setTitle"></h5>
+                        <div id="setDescription"></div>
+                        <table class="table table-striped order-table" id="ochreTable">
+                            <thead class="thead-dark" id="ochreTableColumns">
+                                <tr>
+                                    <th style="text-align: left; width: 30%">Name</th>
+                                    <th style="text-align: left; width: 30%">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody id="ochreTableBody"> 
+                            </tbody>
+                        </table>
+                    </div>
+                    <a id="license"></a>
                 </div>
-                <a id="license"></a>
-            </div>
-            <footer id="footerPlaceholder" class="d-none d-md-block footer container-fluid mt-auto py-3 bg-light"></footer>
-        
-            <script src="js/loadTextList.js"></script>
+                <footer id="footerPlaceholder" class="d-none d-md-block footer container-fluid mt-auto py-3 bg-light"></footer>
+            
+                <script src="js/loadTextList.js"></script>
+            </body>
         </div>
         
 
         <br>
 
         <!-- Footer and hiding in small screen -->
-        <footer class="bg-light text-center text-lg-start d-none d-md-block">
-            Created by Kathy Liu, April 2023
+        <footer class="bg-light text-center text-lg-start d-none d-md-block style=background-color: #ffb6c1;">
+            <p>&copy; 2023 Kathy Liu. All rights reserved.</p>
         </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
