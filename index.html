@@ -130,10 +130,31 @@
 
         <div class="center">
             <div class="container mt-5">
+                <h3>Run Sample Button</h3>
                 <button type="button" class="btn btn-primary" onclick="howdy('kathy')">Run Sample JS</button>
+                <script>
+                    function howdy(firstName){
+                        alert("Howdy " + firstName);
+                    }
+                </script>
+                <br>
+                <br>
+                <h3>Evaluate Number</h3>
                 <input type="text" id="numInput">
                 <button type="button" class="btn btn-primary" onclick="evalNumber()">Evaluate Number</button>
                 <p id="result"></p>
+                <script>
+                    function evalNumber() {
+                        let input = document.getElementById("numInput").value;
+                        let num = Number(input);
+                      
+                        if (Number.isInteger(num) && num >= 10000 && num <= 99999) {
+                            document.getElementById("result").innerHTML = "Valid 5-digit integer";
+                        } else {
+                            document.getElementById("result").innerHTML = "Invalid input, please enter a 5-digit integer";
+                        }
+                    }
+                </script>
             </div>
         </div>
         
@@ -238,65 +259,62 @@
 
             <br>
 
-            <!-- Map API -->
-            <div class="center">
-                <h3>Map API Example</h3>
-                <div id="map"></div>
+        <!-- Map API -->
+        <h3>Map API Example</h3>
+        <div id="map"></div>
 
-                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQ_Sj9KeFAWpyMy_f2eGghM0iT02XnEEg"></script>
-                <script>
-                    function initMap() {
-                        const myLatLng = { lat: 40.7128, lng: -74.0060 };
-                        const map = new google.maps.Map(document.getElementById("map"), {
-                            zoom: 12,
-                            center: myLatLng,
-                        });
-                        const marker = new google.maps.Marker({
-                            position: myLatLng,
-                            map: map,
-                            title: "New York City",
-                        });
-                    }
-                </script>
-                <script async defer
-                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQ_Sj9KeFAWpyMy_f2eGghM0iT02XnEEg&callback=initMap">
-                </script>
-            </div>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQ_Sj9KeFAWpyMy_f2eGghM0iT02XnEEg"></script>
+        <script>
+            function initMap() {
+                const myLatLng = { lat: 40.7128, lng: -74.0060 };
+                const map = new google.maps.Map(document.getElementById("map"), {
+                    zoom: 12,
+                    center: myLatLng,
+                });
+                const marker = new google.maps.Marker({
+                    position: myLatLng,
+                    map: map,
+                    title: "New York City",
+                });
+            }
+        </script>
+        <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQ_Sj9KeFAWpyMy_f2eGghM0iT02XnEEg&callback=initMap">
+        </script>
         </div>
+        
 
         <br>
 
         <!-- OCHRE API -->
-        <div class="center">
-            <h3>OCHRE API Example</h3>
-            <body onload="loadXML()">
-                <div id="nav-placeholder"></div>
-                <div class="container mt-3">
-                    <div id="title"></div>
-                    <div id="subtitle"></div>
-            
-                    <div class="container">
-                        <h4 id="projectTitle"></h4>
-                        <h5 id="setTitle"></h5>
-                        <div id="setDescription"></div>
-                        <table class="table table-striped order-table" id="ochreTable">
-                            <thead class="thead-dark" id="ochreTableColumns">
-                                <tr>
-                                    <th style="text-align: left; width: 30%">Name</th>
-                                    <th style="text-align: left; width: 30%">Description</th>
-                                </tr>
-                            </thead>
-                            <tbody id="ochreTableBody"> 
-                            </tbody>
-                        </table>
-                    </div>
-                    <a id="license"></a>
+        <h3>OCHRE API Example</h3>
+        <body onload="loadXML()">
+            <div id="nav-placeholder"></div>
+            <div class="container mt-3">
+                <div id="title"></div>
+                <div id="subtitle"></div>
+        
+                <div class="container">
+                    <h4 id="projectTitle"></h4>
+                    <h5 id="setTitle"></h5>
+                    <div id="setDescription"></div>
+                    <table class="table table-striped order-table" id="ochreTable">
+                        <thead class="thead-dark" id="ochreTableColumns">
+                            <tr>
+                                <th style="text-align: left; width: 30%">Name</th>
+                                <th style="text-align: left; width: 30%">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ochreTableBody"> 
+                        </tbody>
+                    </table>
                 </div>
-                <footer id="footerPlaceholder" class="d-none d-md-block footer container-fluid mt-auto py-3 bg-light"></footer>
-            
-                <script src="js/loadTextList.js"></script>
-            </body>
-        </div>
+                <a id="license"></a>
+            </div>
+            <footer id="footerPlaceholder" class="d-none d-md-block footer container-fluid mt-auto py-3 bg-light"></footer>
+        
+            <script src="js/loadTextList.js"></script>
+        </body>
         
 
         <br>
